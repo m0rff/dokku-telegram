@@ -6,10 +6,12 @@ HOSTNAME=$(hostname -f)
 TELEGRAM_API="https://api.telegram.org/bot"
 TELEGRAM_ENDPOINT="/sendMessage"
 
+echo "Trying to find token and chat_id for ${APP}"
+
 if [[ -f "$DOKKU_ROOT/$APP/TELEGRAM_TOKEN" || -f "$DOKKU_ROOT/TELEGRAM_TOKEN" ]]; then
   if [[ -f "$DOKKU_ROOT/$APP/TELEGRAM_CHAT_ID" || -f "$DOKKU_ROOT/TELEGRAM_CHAT_ID" ]]; then
     echo "-----> Notifying Telegram chat ..."
-    URL=$(dokku url $APP)
+    URL=$(dokku urls $APP|tail -n1)
     TOKEN=$(cat "$DOKKU_ROOT/$APP/TELEGRAM_TOKEN" 2> /dev/null || cat "$DOKKU_ROOT/TELEGRAM_TOKEN" 2> /dev/null)
     CHAT_ID=$(cat "$DOKKU_ROOT/$APP/TELEGRAM_CHAT_ID" 2> /dev/null || cat "$DOKKU_ROOT/TELEGRAM_CHAT_ID" 2> /dev/null)
     TEXT="Deployed $APP to $HOSTNAME via $URL"
