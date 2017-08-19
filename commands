@@ -35,12 +35,14 @@ get_chat_id() {
 
 case "$1" in
   telegram:set_token)
+    TELEGRAM_ROOT=$(get_telegram_root "$2")
     TOKEN=$(get_token "$2" "$3")
     [[ -z $TOKEN ]] && echo "Please specify a token" && exit 1
     echo "$TOKEN" > "$TELEGRAM_ROOT/TELEGRAM_TOKEN"
     ;;
 
   telegram:set_chat_id)
+    TELEGRAM_ROOT=$(get_telegram_root "$2")
     CHAT_ID=$(get_chat_id "$2" "$3")
     [[ -z $CHAT_ID ]] && echo "Please specify a chat ID" && exit 1
     echo "$CHAT_ID" > "$TELEGRAM_ROOT/TELEGRAM_CHAT_ID"
