@@ -1,6 +1,6 @@
 # Dokku Telegram
 
-Dokku Slack is a plugin for [Dokku](https://github.com/progrium/dokku) that notifies [Telegram](https://telegram.org/) of deployments.
+Dokku Telegram is a plugin for [Dokku](https://github.com/progrium/dokku) that notifies [Telegram](https://telegram.org/) of deployments.
 
 ## Installation
 
@@ -22,3 +22,5 @@ $ dokku help
     telegram:set_chat_id [app] <chat_id>   Set chat ID
     telegram:set_token [app] <token>       Set Telegram BotAPI token
 ```
+
+Inspiration: [dokku-slack](https://github.com/ribot/dokku-slack)
