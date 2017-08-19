@@ -1,0 +1,4 @@
+[plugin]
+description = "Telegram notifier on deploy"
+version = "0.1.0"
+[plugin.config]
