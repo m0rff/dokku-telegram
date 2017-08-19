@@ -23,4 +23,10 @@ $ dokku help
     telegram:set_token [app] <token>       Set Telegram BotAPI token
 ```
 
+## Telegram Bot API
+
+Read more here: https://core.telegram.org/bots/api
+
+
+
 Inspiration: [dokku-slack](https://github.com/ribot/dokku-slack)
