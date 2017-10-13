@@ -48,9 +48,9 @@ case "$1" in
     echo "$CHAT_ID" > "$TELEGRAM_ROOT/TELEGRAM_CHAT_ID"
     ;;
 
-  telegram:clear)
+  telegram:clear_token)
     TELEGRAM_ROOT=$(get_telegram_root "$2")
-    rm "$telegram_ROOT/TELEGRAM_TOKEN"
+    rm "$TELEGRAM_ROOT/TELEGRAM_TOKEN"
     ;;
 
   telegram:get)
