@@ -53,6 +53,11 @@ case "$1" in
     rm "$TELEGRAM_ROOT/TELEGRAM_TOKEN"
     ;;
 
+  telegram:clear_chat_id)
+    TELEGRAM_ROOT=$(get_telegram_root "$2")
+    rm "$TELEGRAM_ROOT/TELEGRAM_CHAT_ID"
+    ;;
+
   telegram:get)
     TELEGRAM_ROOT=$(get_telegram_root "$2")
     cat "$TELEGRAM_ROOT/TELEGRAM_TOKEN"
